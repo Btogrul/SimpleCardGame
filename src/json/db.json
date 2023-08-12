@@ -1,0 +1,25 @@
+{
+  "cards":[
+    {"id": 1, "character": "Naruto", "power": null, "imgUrl": "https://c4.wallpaperflare.com/wallpaper/445/709/239/naruto-shippuuden-manga-anime-uzumaki-naruto-wallpaper-preview.jpg"},
+    {"id": 2, "character": "Itachi", "power": null,  "imgUrl":"https://c4.wallpaperflare.com/wallpaper/293/358/559/naruto-shippuuden-silhouette-uchiha-itachi-red-wallpaper-preview.jpg"},
+    {"id": 3, "character": "Zabuza", "power": null,   "imgUrl": "https://c4.wallpaperflare.com/wallpaper/330/606/436/momochi-naruto-zabuza-wallpaper-preview.jpg"},
+    {"id": 4, "character": "Ichigo", "power": null,   "imgUrl": "https://c4.wallpaperflare.com/wallpaper/889/929/246/bleach-anime-kurosaki-ichigo-wallpaper-preview.jpg"},
+    {"id": 5, "character": "Kabuto", "power": null,   "imgUrl": "https://c4.wallpaperflare.com/wallpaper/519/91/641/anime-naruto-kabuto-yakushi-snake-wallpaper-preview.jpg"},
+    {"id": 6, "character": "Sukuna", "power": null,   "imgUrl": "https://c4.wallpaperflare.com/wallpaper/941/634/347/jujutsu-kaisen-ryomen-sukuna-hd-wallpaper-preview.jpg"},
+    {"id": 7, "character": "Ainz", "power": null,   "imgUrl": "https://c4.wallpaperflare.com/wallpaper/302/379/794/anime-overlord-ainz-ooal-gown-wallpaper-preview.jpg"},
+    {"id": 8, "character": "Zoro", "power": null,   "imgUrl": "https://c4.wallpaperflare.com/wallpaper/672/977/231/one-piece-roronoa-zoro-swords-green-eye-wallpaper-preview.jpg"},
+    {"id": 9, "character": "Natsu", "power": null,  "imgUrl": "https://c4.wallpaperflare.com/wallpaper/944/581/82/anime-fairy-tail-natsu-dragneel-wallpaper-preview.jpg"},
+    {"id": 10, "character": "Kayn", "power": null, "imgUrl": "https://c4.wallpaperflare.com/wallpaper/266/874/445/video-game-league-of-legends-ashe-league-of-legends-kayn-league-of-legends-hd-wallpaper-preview.jpg"},
+    {"id": 11, "character": "Gojo", "power": null, "imgUrl": "https://c4.wallpaperflare.com/wallpaper/972/343/632/jujutsu-kaisen-gojo-satoru-hd-wallpaper-preview.jpg"},
+    {"id": 12, "character": "Zed", "power": null, "imgUrl": "https://c4.wallpaperflare.com/wallpaper/142/558/446/zed-league-of-legends-zed-video-games-league-of-legends-wallpaper-preview.jpg"},
+    {"id":13, "character":"Yasuo", "power":null, "imgUrl":"https://c4.wallpaperflare.com/wallpaper/854/376/938/league-of-legends-yasuo-league-of-legends-charcoal-katana-wallpaper-preview.jpg"},
+    {"id":14, "character":"Zaraki Kenpachi", "power":null, "imgUrl":"https://c4.wallpaperflare.com/wallpaper/841/742/321/bleach-anime-kenpachi-zaraki-wallpaper-preview.jpg"},
+    {"id":15, "character":"Unohana", "power":null, "imgUrl":"https://c4.wallpaperflare.com/wallpaper/1023/137/235/cosplay-bleach-unohana-yachiru-alin-ma-hd-wallpaper-preview.jpg"},
+    {"id":16, "character":"Yamamoto", "power":null, "imgUrl":"https://c4.wallpaperflare.com/wallpaper/544/946/546/bleach-anime-genry%C5%ABsai-shigekuni-yamamoto-fire-wallpaper-preview.jpg"},
+    {"id":17, "character":"Albedo", "power":null, "imgUrl":"https://c4.wallpaperflare.com/wallpaper/136/618/466/overlord-anime-anime-girls-albedo-overlord-wallpaper-preview.jpg"},
+    {"id":18, "character":"Rimuru", "power":null, "imgUrl":"https://c4.wallpaperflare.com/wallpaper/595/744/886/anime-that-time-i-got-reincarnated-as-a-slime-rimuru-tempest-hd-wallpaper-preview.jpg"}
+  ]
+}
+
+    
+

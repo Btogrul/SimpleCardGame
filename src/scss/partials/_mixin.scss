@@ -1,0 +1,30 @@
+@mixin primaryFont ($l-h:null) {
+    color: $primaryColor;
+    font-size: $myFont;
+    line-height: $l-h;
+}
+
+@mixin flex-all ($f-d:null, $f-w:null, $f-j:null, $f-a:null){
+    display: flex;
+    flex-direction: $f-d;
+    flex-wrap: $f-w;
+    justify-content: $f-j;
+    align-items: $f-a;
+}
+
+@mixin button($bcolor,
+$url,
+$x1,
+$y1,
+$bor,
+$col) {
+ background: $bcolor;
+ -webkit-mask: url($url);
+ mask: url($url);
+ -webkit-mask-size: $x1 $y1;
+ mask-size: $x1 $y1;
+ border: $bor;
+ color: $col;
+}
+
+

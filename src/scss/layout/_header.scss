@@ -1,0 +1,51 @@
+
+
+header{
+    padding: 20px;
+    #large-header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }    
+    .button{
+        position: relative;
+        transition: all 0.5s;
+        overflow: hidden;
+        @include flex-all($f-j:center, $f-a:center);
+        margin: 20px 0;
+        z-index: 3;
+        #f5{
+            @include primaryFont($l-h: 20px);
+            font-weight: bold;
+            color: $bgColor;
+            // box-shadow: 3px 4px 0px 0px #899599;
+            // background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+            // background-color:#ededed;
+            border-radius:15px;
+            // border:1px solid #d6bcd6;
+            cursor:pointer;
+            padding:20px 35px;
+            text-shadow:0px 1px 0px #e1e2ed;
+            // &:hover{
+            //     background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+            //     background-color:#bab1ba;
+            // }
+            @include button(linear-gradient(to left, #fffafa36 5%, #0000002a 100%), "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+            3000%,
+            100%,
+            none,
+            #ffffff);
+            cursor: pointer;
+            -webkit-animation: ani2 0.7s steps(29) forwards;
+            animation: ani2 0.7s steps(29) forwards;
+          
+            &:hover {
+             -webkit-animation: ani 0.7s steps(29) forwards;
+             animation: ani 0.7s steps(29) forwards;
+            }
+        }
+    }
+}

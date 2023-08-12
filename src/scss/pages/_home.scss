@@ -1,0 +1,73 @@
+
+#anime-cards{
+    #a-cards{
+        .flip-card{
+            margin: 20px 0;
+            transition: all .5s ease-out;
+            
+            &:hover > .card-inner{
+                cursor: pointer;
+                transform: rotateY(180deg);
+            }
+
+            .card-inner{
+                @extend .f-size;
+                position: relative;
+                transform-style: preserve-3d;
+                transition: transform 1.5s ease-out;
+                height: 350px;
+
+                .card-front{
+                    @extend .f-size;
+                    @extend .b-radius;
+                    @extend .b-shadow;
+                    overflow: hidden;
+                    position: absolute;
+                    backface-visibility: hidden;
+                    img{
+                        @extend .img-size;
+                    }
+                }
+                .card-back{
+                    @extend .f-size;
+                    @extend .b-radius;
+                    @extend .b-shadow;
+                    overflow: hidden;
+                    position: absolute;
+                    background-color: $bgColor;
+                    transform: rotateY(180deg);
+                    backface-visibility: hidden;
+                    @include flex-all($f-j:center,$f-a:center);
+                    h2{
+                        @include primaryFont;
+                        margin: 20px;
+                        text-align: center;
+                    }
+                }
+            }
+
+              
+        }
+    }
+}
+
+.modal {
+    @include flex-all($f-j:center, $f-a: center);
+    position: fixed; 
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.514) ; 
+    &:hover > .card-inner{
+        cursor: pointer;
+        transform: rotateY(0) !important;
+    }
+    .card-inner{
+        height: 500px !important;
+        width: 500px !important;
+
+
+        
+    }
+  }
