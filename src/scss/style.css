@@ -299,32 +299,43 @@ header .button #f5:hover {
 }
 
 #anime-cards #a-cards .flip-card {
-  margin: 15px 0;
-  transition: all 0.4s ease-out;
+  margin: 10px 0;
+  transition: all 0.3s ease-out;
   cursor: pointer;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
-#anime-cards #a-cards .flip-card:hover {
-  transform: translateY(-6px);
+
+/* Tactile touch feedback for mobile */
+#anime-cards #a-cards .flip-card:active {
+  transform: scale(0.96);
 }
-#anime-cards #a-cards .flip-card:hover > .card-inner {
-  cursor: pointer;
-  transform: rotateY(180deg);
+
+/* Hover flip only on devices that support hover (desktop/laptop) */
+@media (hover: hover) and (pointer: fine) {
+  #anime-cards #a-cards .flip-card:hover {
+    transform: translateY(-5px);
+  }
+  #anime-cards #a-cards .flip-card:hover > .card-inner {
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
 }
+
 #anime-cards #a-cards .flip-card .card-inner {
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 1s ease-out;
-  height: 350px;
-  border-radius: 24px;
+  transition: transform 0.8s ease-out;
+  height: clamp(210px, 30vw, 340px);
+  border-radius: 20px;
 }
 #anime-cards #a-cards .flip-card .card-inner .card-front {
   overflow: hidden;
   position: absolute;
   backface-visibility: hidden;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 2px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   transition: all 0.3s;
 }
 #anime-cards #a-cards .flip-card .card-inner .card-back {
@@ -337,22 +348,23 @@ header .button #f5:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  padding: clamp(10px, 2vw, 20px);
 }
 #anime-cards #a-cards .flip-card .card-inner .card-back h2 {
   color: #ffffff;
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: clamp(14px, 2vw, 20px);
+  margin: 6px 0;
   text-align: center;
   font-weight: 800;
+  word-break: break-word;
 }
 #anime-cards #a-cards .flip-card .card-inner .card-back .card-power-badge {
-  font-size: 22px;
+  font-size: clamp(17px, 2.2vw, 24px);
   font-weight: 900;
-  margin-top: 5px;
+  margin-top: 4px;
   transition: all 0.3s;
 }
 
@@ -360,17 +372,17 @@ header .button #f5:hover {
   color: #94a3b8;
   letter-spacing: 2px;
   background: rgba(255, 255, 255, 0.08);
-  padding: 4px 14px;
+  padding: 4px 12px;
   border-radius: 12px;
   border: 1px dashed rgba(255, 255, 255, 0.2);
 }
 
 #anime-cards #a-cards .flip-card .card-inner .card-back .card-power-badge.revealed-power {
   color: #ffd700;
-  font-size: 26px;
+  font-size: clamp(20px, 2.5vw, 28px);
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
   background: rgba(255, 215, 0, 0.12);
-  padding: 6px 16px;
+  padding: 5px 14px;
   border-radius: 14px;
   border: 1px solid #ffd700;
   animation: powerPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -388,12 +400,13 @@ header .button #f5:hover {
 }
 
 #anime-cards #a-cards .flip-card .card-inner .card-back .click-to-choose {
-  font-size: 13px;
+  font-size: clamp(11px, 1.4vw, 13px);
   color: #a5b4fc;
-  margin-top: 15px;
+  margin-top: 8px;
   background: rgba(99, 102, 241, 0.2);
-  padding: 4px 12px;
+  padding: 4px 10px;
   border-radius: 12px;
+  text-align: center;
 }
 
 /* Card Selection Highlighting */
@@ -799,24 +812,374 @@ header .button #f5:hover {
   100% { transform: scale(1); opacity: 1; }
 }
 
-@media (max-width: 600px) {
-  .battle-fighters {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .fighter-box {
-    max-width: 220px;
+/* ==========================================================================
+   Comprehensive Multi-Device Responsiveness
+   ========================================================================== */
+
+/* Tablets & Small Laptops (768px - 991px) */
+@media (max-width: 991px) {
+  .battle-arena {
+    max-width: 700px;
+    padding: 22px 18px;
   }
   .fighter-img {
-    height: 180px;
+    height: 200px;
   }
-  .vs-center {
-    min-width: unset;
-    margin: 5px 0;
+  .fighter-name {
+    font-size: 1.15rem;
+  }
+  .fighter-power .power-num {
+    font-size: 1.35rem;
+  }
+}
+
+/* Phablets & Mobile Landscape (576px - 767px) */
+@media (max-width: 767px) {
+  .game-header {
+    padding: 16px 12px 6px;
+  }
+  .game-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  .header-controls {
+    gap: 6px;
+    margin-bottom: 10px !important;
+  }
+  .btn-mode, .btn-action {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+  .scoreboard-container {
+    max-width: 360px;
+    margin: 8px auto;
+  }
+  .score-card {
+    padding: 8px 12px;
+  }
+  .score-value {
+    font-size: 1.5rem;
+  }
+  .vs-badge {
+    font-size: 1rem;
+    padding: 4px 8px;
+  }
+  .turn-banner {
+    font-size: 0.95rem;
+    padding: 8px 18px;
+    max-width: 95%;
+  }
+
+  /* Battle Arena */
+  .battle-overlay {
+    padding: 12px;
+  }
+  .battle-arena {
+    max-width: 540px;
+    max-height: 94vh;
+    padding: 20px 14px;
+    border-radius: 22px;
+  }
+  .battle-fighters {
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .fighter-box {
+    max-width: 190px;
+  }
+  .fighter-img {
+    height: 160px;
+  }
+  .fighter-player-tag {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  .fighter-name {
+    font-size: 1.05rem;
+  }
+  .fighter-power .power-num {
+    font-size: 1.25rem;
   }
   .vs-circle {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     font-size: 1.3rem;
+  }
+}
+
+/* Standard Mobile Phones (max-width: 575px) */
+@media (max-width: 575px) {
+  .game-header {
+    padding: 12px 8px 4px;
+  }
+  .game-title {
+    font-size: 1.45rem;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .game-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    padding: 0 5px;
+  }
+  .header-controls {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+  .btn-mode {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  .btn-action {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+  .scoreboard-container {
+    width: 100%;
+    max-width: 310px;
+    gap: 8px;
+  }
+  .score-card {
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+  .score-label {
+    font-size: 0.72rem;
+  }
+  .score-value {
+    font-size: 1.35rem;
+  }
+  .turn-banner {
+    font-size: 0.84rem;
+    padding: 8px 14px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 96%;
+    justify-content: center;
+  }
+  .turn-banner .turn-icon {
+    font-size: 1rem;
+  }
+
+  /* Grid Cards on Small Screens */
+  #anime-cards #a-cards {
+    margin: 0 -4px;
+  }
+  #anime-cards #a-cards [class*="col-"] {
+    padding: 0 4px;
+  }
+  #anime-cards #a-cards .flip-card {
+    margin: 6px 0;
+  }
+  #anime-cards #a-cards .flip-card .card-inner {
+    height: 220px;
+    border-radius: 16px;
+  }
+  #anime-cards #a-cards .flip-card .card-inner .card-front,
+  #anime-cards #a-cards .flip-card .card-inner .card-back {
+    border-radius: 16px;
+  }
+  #anime-cards #a-cards .flip-card .card-inner .card-back h2 {
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  #anime-cards #a-cards .flip-card .card-inner .card-back .card-power-badge {
+    font-size: 16px;
+    padding: 3px 10px;
+  }
+  #anime-cards #a-cards .flip-card .card-inner .card-back .card-power-badge.revealed-power {
+    font-size: 20px;
+    padding: 4px 12px;
+  }
+  #anime-cards #a-cards .flip-card .card-inner .card-back .click-to-choose {
+    font-size: 10.5px;
+    padding: 3px 8px;
+    margin-top: 6px;
+  }
+  .flip-card.card-selected-p1 .selection-floating-badge,
+  .flip-card.card-selected-p2 .selection-floating-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+    top: 6px;
+  }
+
+  /* Battle Modal on Mobile: Side-by-side fighters with clash */
+  .battle-overlay {
+    padding: 8px;
+  }
+  .battle-arena {
+    padding: 16px 10px;
+    max-height: 94vh;
+    border-radius: 20px;
+  }
+  .battle-arena-header h2 {
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  #battle-status-text {
+    font-size: 0.88rem;
+    margin-bottom: 10px;
+  }
+  .battle-fighters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 8px 0;
+    width: 100%;
+  }
+  .fighter-box {
+    flex: 1;
+    max-width: 135px;
+    min-width: 110px;
+  }
+  .fighter-player-tag {
+    font-size: 0.78rem;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+  .fighter-card {
+    border-radius: 14px;
+  }
+  .fighter-img {
+    height: 125px;
+  }
+  .fighter-info {
+    padding: 6px 4px;
+  }
+  .fighter-name {
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .fighter-power {
+    font-size: 0.78rem;
+  }
+  .fighter-power .power-num {
+    font-size: 1.1rem;
+  }
+  .vs-center {
+    min-width: 44px;
+    margin: 0;
+  }
+  .vs-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .clash-spark {
+    font-size: 1.2rem;
+    margin-top: 2px;
+  }
+  .result-badge {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    margin-top: 5px;
+  }
+  .battle-result-banner {
+    padding: 8px 10px;
+    margin: 8px auto;
+  }
+  #battle-winner-title {
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+  }
+  #battle-winner-desc {
+    font-size: 0.8rem;
+  }
+  .btn-battle-action {
+    font-size: 0.9rem;
+    padding: 9px 20px;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  /* Mobile Clash keyframes to keep cards inside bounds */
+  @keyframes cardClashShakeLeft {
+    0% { transform: translateX(0) rotate(0deg) scale(1); }
+    35% { transform: translateX(14px) rotate(-2deg) scale(1.05); }
+    70% { transform: translateX(10px) rotate(2deg) scale(1.04); }
+    100% { transform: translateX(14px) rotate(0deg) scale(1.05); }
+  }
+  @keyframes cardClashShakeRight {
+    0% { transform: translateX(0) rotate(0deg) scale(1); }
+    35% { transform: translateX(-14px) rotate(2deg) scale(1.05); }
+    70% { transform: translateX(-10px) rotate(-2deg) scale(1.04); }
+    100% { transform: translateX(-14px) rotate(0deg) scale(1.05); }
+  }
+}
+
+/* Extra Small Devices (e.g. iPhone SE, Galaxy Fold 320px) */
+@media (max-width: 360px) {
+  .game-title {
+    font-size: 1.25rem;
+  }
+  .fighter-box {
+    max-width: 115px;
+    min-width: 95px;
+  }
+  .fighter-img {
+    height: 105px;
+  }
+  .fighter-name {
+    font-size: 0.78rem;
+  }
+  .vs-circle {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+  #anime-cards #a-cards .flip-card .card-inner {
+    height: 195px;
+  }
+}
+
+/* Landscape Mode on Smartphones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .battle-overlay {
+    padding: 6px;
+  }
+  .battle-arena {
+    padding: 10px 14px;
+    max-height: 96vh;
+  }
+  .battle-arena-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  #battle-status-text {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  .battle-fighters {
+    margin: 4px 0;
+  }
+  .fighter-img {
+    height: 90px;
+  }
+  .fighter-info {
+    padding: 4px;
+  }
+  .fighter-name {
+    font-size: 0.8rem;
+  }
+  .fighter-power .power-num {
+    font-size: 0.95rem;
+  }
+  .battle-result-banner {
+    padding: 4px 10px;
+    margin: 4px auto;
+  }
+  #battle-winner-title {
+    font-size: 1rem;
+  }
+  .btn-battle-action {
+    padding: 6px 18px;
+    font-size: 0.85rem;
   }
 }/*# sourceMappingURL=style.css.map */
