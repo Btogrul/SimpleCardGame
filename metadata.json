@@ -1,0 +1,7 @@
+{
+  "name": "Simple Random Card Game",
+  "description": "Interactive anime card game featuring dynamic card flips, random power ratings, and particle canvas background animations.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

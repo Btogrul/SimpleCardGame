@@ -1,0 +1,14 @@
+{
+  "name": "simple-card-game",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive anime card game featuring dynamic card flips, random power ratings, and particle canvas background animations.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node -e \"console.log('Build complete')\""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
